@@ -27,9 +27,24 @@ export default async function RootLayout({
         <DraftModeScript />
       </head>
       <body className={inter.className}>
+        <header>
+          <div className='flex justify-between items-center p-4 bg-gray-800 text-white'>
+            <a href='/' className='text-xl font-bold'>Create Next App</a>
+            <nav className='space-x-4'>
+              <a href='/'>Home</a>
+              <a href='/about'>About</a>
+            </nav>
+            <div/>
+          </div>
+        </header>
         <MakeswiftProvider previewMode={(await draftMode()).isEnabled}>
           {children}
         </MakeswiftProvider>
+        <footer>
+          <div className='p-4 bg-gray-200 text-gray-800'>
+            <p>© 2021 Your Company</p>
+          </div>
+        </footer>
       </body>
     </html>
   )
