@@ -21,5 +21,11 @@ export default async function Page({ params }: { params: Promise<{ path?: string
 
   if (snapshot == null) return notFound()
 
+  await sleep(1000)
+
   return <MakeswiftPage snapshot={snapshot} />
+}
+
+function sleep(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms))
 }
